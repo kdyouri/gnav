@@ -49,8 +49,8 @@ class Init extends Migration
             $table->foreignId('vehicle_id')->index();
             $table->foreignId('departure_city_id')->index();
             $table->foreignId('arrival_city_id')->index();
-            $table->dateTime('departure_time');
-            $table->dateTime('arrival_time');
+            $table->time('departure_time');
+            $table->time('arrival_time');
             $table->float('price');
             $table->integer('passenger_count');
             $table->timestamps();

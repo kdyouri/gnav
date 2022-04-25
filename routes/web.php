@@ -19,5 +19,8 @@ Route::resource('shuttles', 'App\Http\Controllers\ShuttleController');
 Route::resource('companies', 'App\Http\Controllers\CompanyController');
 Route::resource('cities', 'App\Http\Controllers\CityController');
 Route::resource('vehicles', 'App\Http\Controllers\VehicleController');
+Route::resource('company_vehicles', 'App\Http\Controllers\CompanyVehicleController');
+Route::resource('company_shuttles', 'App\Http\Controllers\CompanyShuttleController');
+Route::resource('memberships', 'App\Http\Controllers\MembershipController');
 
 Auth::routes();

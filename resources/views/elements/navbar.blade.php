@@ -11,17 +11,38 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a href="/" class="nav-link"><i class="bi bi-house"></i> {{ __('Home') }}</a>
+                    <a href="/" class="nav-link{{ Request::path() == '/' ? ' active' : '' }}">
+                        <i class="bi bi-house"></i> {{ __('Home') }}
+                    </a>
+                </li>
+            @if (Auth::user()->role === 'admin')
+                <li class="nav-item">
+                    <a href="/companies" class="nav-link{{ preg_match('/^companies/', Request::path()) ? ' active' : '' }}">
+                        <i class="bi bi-building"></i> {{ __('Companies') }}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/companies" class="nav-link"><i class="bi bi-building"></i> {{ __('Companies') }}</a>
+                    <a href="/cities" class="nav-link{{ preg_match('/^cities/', Request::path()) ? ' active' : '' }}">
+                        <i class="bi bi-geo-alt"></i> {{ __('Cities') }}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/cities" class="nav-link"><i class="bi bi-geo-alt"></i> {{ __('Cities') }}</a>
+                    <a href="/vehicles" class="nav-link{{ preg_match('/^vehicles/', Request::path()) ? ' active' : '' }}">
+                        <i class="bi bi-truck"></i> {{ __('Vehicles') }}
+                    </a>
+                </li>
+            @elseif (Auth::user()->role === 'company')
+                <li class="nav-item">
+                    <a href="/company_shuttles" class="nav-link{{ preg_match('/^company_shuttles/', Request::path()) ? ' active' : '' }}">
+                        <i class="bi bi-signpost"></i> {{ __('Our Shuttles') }}
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/vehicles" class="nav-link"><i class="bi bi-truck"></i> {{ __('Vehicles') }}</a>
+                    <a href="/company_vehicles" class="nav-link{{ preg_match('/^company_vehicles/', Request::path()) ? ' active' : '' }}">
+                        <i class="bi bi-truck"></i> {{ __('Our Vehicles') }}
+                    </a>
                 </li>
+            @endif
             </ul>
 
             <!-- Right Side Of Navbar -->

@@ -34,7 +34,7 @@ return [
     'current_password'     => 'Le mot de passe est incorrect.',
     'date'                 => 'Le champ :attribute n\'est pas une date valide.',
     'date_equals'          => 'Le champ :attribute doit être une date égale à :date.',
-    'date_format'          => 'Le champ :attribute ne correspond pas au format :format.',
+    'date_format'          => 'Ne correspond pas au format :format.',
     'declined'             => 'Le champ :attribute doit être décliné.',
     'declined_if'          => 'Le champ :attribute doit être décliné quand :other a la valeur :value.',
     'different'            => 'Les champs :attribute et :other doivent être différents.',

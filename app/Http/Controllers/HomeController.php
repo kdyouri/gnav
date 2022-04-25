@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shuttle;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        return view('home');
+        $shuttles = Shuttle::all();
+        return view('home', compact('shuttles'));
     }
 }
